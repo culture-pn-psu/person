@@ -28,7 +28,7 @@ class PersonPosition extends \yii\db\ActiveRecord {
     public function rules() {
         return [
             [['position_id'], 'required'],
-            [['person_id', 'position_id'], 'integer']
+            [['person_id', 'position_id','user_id'], 'integer']
         ];
     }
 

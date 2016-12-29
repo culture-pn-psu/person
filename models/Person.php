@@ -38,7 +38,7 @@ class Person extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['prefix_id', 'id_card'], 'integer'],
+            [['prefix_id', 'id_card','user_id'], 'integer'],
             [['name', 'surname'], 'required'],
             [['sex', 'data','tel','phone'], 'string'],
             [['img_id'], 'string', 'max' => 50],
@@ -53,7 +53,9 @@ class Person extends \yii\db\ActiveRecord {
      */
     public function attributeLabels() {
         return [
+            
             'id' => Yii::t('person', 'ID'),
+            'user_id' => Yii::t('person', 'ID'),
             'prefix_id' => Yii::t('person', 'คำนำหน้า'),
             'name' => Yii::t('person', 'ชื่อ'),
             'surname' => Yii::t('person', 'นามสกุล'),
