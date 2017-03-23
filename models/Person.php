@@ -169,5 +169,10 @@ class Person extends \yii\db\ActiveRecord {
     public function getUser() {
         return $this->hasOne(User::className(), ['person_id' => 'id']);
     }
+    
+    
+    public static function getList() {
+        return ArrayHelper::map(self::find()->all(),'user_id','fullname');        
+    }
 
 }
